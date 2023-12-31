@@ -1,0 +1,181 @@
+/* for mobile */
+@media screen and (max-width: 450px) {
+     /* sidebar */
+    .sidebar{
+        width: 50px;
+    }
+    .main_listitem li{
+        padding: 10px 10px;  
+    }
+    .main_listitem li span{
+        display: none;     
+    }
+
+    /* header */
+    .header-left button{
+        display: none;
+    }
+    .header-left_search{
+        background: transparent;
+    }
+    .header-left .header-left_search button{
+        display: block;
+    }
+    .header-left .header-left_search input{
+        display: none;
+    }
+    .header-right_setting{
+        display: none;
+    }
+
+    /* silde */
+    .lobby_buttom-next,
+    .lobby_buttom-back{
+        display: none;
+    }
+    .lobby{
+        height: 160px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .lobby_listitemalbum{
+        padding-top:0;
+        margin-left: 0;
+    }
+    .album-item{
+        width: 100%;
+        height: 100%;
+    }
+    .album-item_img{ 
+        margin-left:0;
+        padding-bottom: 20px;
+        width: 100%;
+        height: 100%;
+        margin-right: 0;	
+        overflow: hidden;
+    }
+    .album-item_img img{
+        height: 100%;  
+        width: 100%;
+    }
+    .album-item:nth-child(2) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(5) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(3) .album-item_img{	
+        display: none;
+    }
+    .album-item:nth-child(4) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(n+6) .album-item_img{
+        display: none;
+    }
+
+    /* album */
+    #album {
+        padding: 0;	
+        margin-top: 20px;
+    }
+    #gallery {
+        grid-template-columns: repeat(3, 80px);
+        gap: 10px;
+    }
+    figure figcaption {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* rank */
+    .rank-active{
+        display: none;
+    }
+
+    .item_img img{
+        width: auto;
+    }
+    .item_profile {
+        width: 100px;
+    }
+    .item_profile h4{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 70px;
+    }
+    .item_profile a{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width:70px
+    }
+    .rank-weekly{
+        width: 100%;
+        gap: 15px;
+        display: grid;
+    }
+    .rank-weekly_vn, .rank-weekly_usuk, .rank-weekly_kpop{
+        padding: 5px;
+    }
+
+    /* discovery */
+    .discovery-listitem_center, .discovery-listitem_left{
+        display: none;
+    }
+    .discovery-select{
+        margin-top: 20px;
+        gap:10px
+    }
+    .discovery-select button{
+        font-size: 10px;
+    }
+    .title h2 {
+        width: 150px;
+    }
+
+    /* nowplaying */
+    .nowplaying__main--left--title{
+        display: none;
+    }
+    .now-playing__bar--main .nowplaying__main--left--icon i{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .level-item{
+        display: none;
+    }
+    .level-item_playlist{
+        display: none;
+    }
+    .shuffle{
+        display: none;
+    }
+    .again{
+        display: none;
+    }
+    .nowplaying__main--center{
+        width: 400px;
+    }
+    .level-item_volum button img{
+        margin-left: 15px;
+        width: 15px;
+        height: 15px;
+    }
+    .level-item_volum button input{
+        transform: rotate(-90deg);
+        width: 50px;
+        margin-left: 0;
+    }
+    
+    /* chill */
+    .albumchill-list{
+        display: block;
+    }
+
+}
+@media screen and (max-width: 430px) {
+    
+}

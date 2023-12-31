@@ -1,0 +1,104 @@
+.broadcast{
+    position: relative;  
+    padding-top: 5px;
+    margin: 40px 0 65px;
+}
+.broadcast-listitem{
+    margin-top: 40px; 
+    width: 100%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border-radius: 8px;
+    position: relative;   
+    margin-left: -10px; 
+}
+.broadcast-item{
+    position: absolute;
+    transition: 0.5s ease-in-out ;
+    background-color: rgba(46, 15, 49, 0.586);
+    border-radius: 8px;  
+}
+.broadcast-item_img{
+    width: 370px;
+    height: 220px;
+    border-radius: 8px;  
+}
+.broadcast-item_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+	filter: drop-shadow(0 0 0.3rem rgb(100, 71, 99));
+}
+.broadcast-item_frofile{
+    margin-top: 10px;
+    display: flex;   
+    align-items: center; 
+    justify-content: flex-start;
+    margin-left: 5px;
+}
+.profile-img{   
+    overflow: hidden;
+    margin-right: 8px;
+}
+.profile-img img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-details{
+    display: flex;
+    align-items: center;
+}
+.profile-rank{
+    display: flex;
+    align-items: center;
+}
+.profile-rank .profile-rank-item{
+    margin-left: 60px;
+    font-size: 50px;
+    color: transparent;
+	-webkit-text-stroke:2px rgb(128, 23, 193);	
+	font-weight: 900;
+	line-height: 1;
+	font-family: "Roboto",sans-serif;
+}
+.profile-rank .profile-rank-item[data-rank="1"] {
+    -webkit-text-stroke: 2px rgb(123, 234, 236);
+}
+
+.profile-rank .profile-rank-item[data-rank="2"] {
+    -webkit-text-stroke: 2px rgb(69, 232, 150);
+}
+
+.profile-rank .profile-rank-item[data-rank="3"] {
+    -webkit-text-stroke: 2px rgb(216, 85, 104);
+}
+
+
+.gallery__item--first{
+    opacity: 1;
+    transform: translateX(calc(100% + 30px));
+}
+.gallery__item--selectbefor{
+    opacity: 1;
+    transform: translateX(0);
+}
+.gallery__item--last{
+    transform: translateX(calc(-100% - 30px));
+}
+/* .gallery__item--previous{
+    opacity: 1;
+    transform: translateX(calc(-20% + 30px));
+}
+.gallery__item--selectafter{
+    opacity: 1;
+    transform: translateX(0);
+}
+.gallery__item--next{
+    opacity: 1;
+    transform: translateX(calc(20% + 30px));
+} */
