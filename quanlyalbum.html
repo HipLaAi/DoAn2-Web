@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="icon" type="image/png" href="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="access/css/admin.css">
     <link rel="stylesheet" href="access/css/quanlynghesi.css">
     <link rel="stylesheet" href="access/css/modalalbum.css">
-    <script src="access/js/angular.min.js"></script>
-    <script src="access/js/global.js"></script>
 </head>
-<body ng-app="NgheNhacTrucTuyen"  ng-controller="AdminCtrl">
+<body>
     <div id="header">
         <li onclick="logout()">
             <i class="fa-solid fa-right-from-bracket"></i>
@@ -19,27 +18,27 @@
     </div>
     <nav id="sidebar" class="scroll">
         <div class="logo">
-            <img src="D:\Phát triển Dịch Vụ\BTL\API.NgheNhacTrucTuyen\FILE\IMG\—Pngtree—music logo_8736577.png" alt="">
+            <img src="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" alt="">
             <h3>ADMIN</h3>
             <span>Chào mừng bạn trở lại</span>
         </div>
         <hr>
         <ul class="menu">
+            <li onclick="window.location.href='./chart.html'">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Tổng quan</span>
+            </li>
             <li onclick="window.location.href='./quanlynhac.html'">
                 <i class="fa-solid fa-music"></i>
                 <span>Quản lý nhạc</span>
             </li>
             <li style="background-color: #8a4de6; color: #111d3d;" onclick="window.location.href='./quanlyalbum.html'">
                 <i class="fa-solid fa-record-vinyl"></i>
-                <span style="color: #111d3d;">Quản lý album</span>
+                <span>Quản lý album</span>
             </li>
             <li onclick="window.location.href='./quanlynghesi.html'">
                 <i class="fa-solid fa-address-card"></i>
                 <span>Quản lý nghệ sĩ</span>
-            </li>
-            <li onclick="window.location.href='./quanlytheloai.html'">
-                <i class="fa-solid fa-palette"></i>
-                <span>Quản lý thể loại nhạc</span>
             </li>
             <li>
                 <i class="fa-brands fa-playstation"></i>
@@ -76,7 +75,7 @@
                 <div class="tools">
                     <label>
                         Hiện
-                        <select name="" id="pageSizeA" onchange="handleSelectChangeSizeA()">
+                        <select name="" id="pageSizeA">
                             <option value="10">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
@@ -95,16 +94,17 @@
                             <th>
                                 <input class="checkbox" type="checkbox">
                             </th>
-                            <th onclick="sortTable(1)">Tên album</th>
+                            <th>Tên album</th>
                             <th>Ảnh</th>
-                            <th onclick="sortTable(3)">Nghệ sĩ</th>
-                            <th onclick="sortTable(4)">Số lượng bài hát</th>
-                            <th onclick="sortTable(5)">Mô tả</th>
+                            <th>Nghệ sĩ</th>
+                            <th>Số lượng bài hát</th>
+                            <th>Lượt thích</th>
+                            <th>Ngày phát hành</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                        <tr ng-repeat="a in listAlbum">
+                        <!-- <tr ng-repeat="a in listAlbum">
                             <td>
                                 <input class="checkbox" type="checkbox">
                             </td>
@@ -128,16 +128,17 @@
                                 <i ng-click="LoadDetailAlbum(a.idAlbum)" onclick="openFormUpdateMusic()" class="fa-solid fa-pen-to-square"></i>
                                 <i ng-click="LoadDetailAlbum(a.idAlbum)" onclick="openFormDeleteMusic()" class="fa-solid fa-delete-left"></i>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <div id="page">
                     <label>
                         Trang
-                        <select name="" id="pageIndexA" onchange="handleSelectChangeIndexA()">
-                            <option ng-repeat="i in listIndexA" value="{{i}}">
-                                {{i}}
-                            </option>
+                        <select name="" id="pageIndexA">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </label>
                 </div>
@@ -157,20 +158,17 @@
                     <tr>
                         <th>Tên album</th>
                         <th>Nghệ sĩ</th>
-                        <th>Mô tả</th>
+                        <th>Ngày phát hành</th>
                     </tr>
                     <tr>
                         <td>
                             <input type="text" id="tenAlbum">
                         </td>
                         <td>
-                            <select id="ngheSi" onchange="handleSelectChangeTenNgheSi()">
-                                <option disabled selected value="">Nghệ sĩ</option>
-                                <option ng-repeat="ns in listNgheSi" value="{{ns.idNgheSi}}">{{ns.tenNgheSi}}</option>
-                            </select>
+                            <select id="ngheSi"></select>
                         </td>
                         <td>
-                            <input type="text" id="moTa">
+                            <input type="text" id="ngayPhatHanh">
                         </td>
                     </tr>
                     <tr>
@@ -181,7 +179,7 @@
                         <td>
                             <label>
                                 <input class="file_img" type="file"/>
-                                <img accept="image/*" class="img" src="" alt="">
+                                <img accept="image/*" class="img" src="" alt="" id="imgAdd">
                             </label>
                         </td>
                         <td colspan="2">
@@ -194,28 +192,24 @@
                                             </th>
                                             <th>Tên bài nhạc</th>
                                             <th>Ảnh</th>
-                                            <th>Thể loại</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                             <div class="table_content">
                                 <table id="table_create" cellspacing = 0; border="1">
-                                    <tbody>
-                                        <tr ng-repeat="n in listNhacByIDNgheSi">
+                                    <tbody id="addSongAlbum">
+                                        <!-- <tr>
                                             <td>
-                                                <input class="checkbox" type="checkbox" value="{{n.idNhac}}">
+                                                <input class="checkbox" type="checkbox" value="">
                                             </td>
-                                            <td>{{n.tenNhac}}</td>
+                                            <td></td>
                                             <td>
                                                 <label>
-                                                    <img accept="image/*" class="img" src="{{n.img}}" alt="">
+                                                    <img accept="image/*" class="img" src="" alt="">
                                                 </label>
                                             </td>
-                                            <td ng-repeat="tl in listTheLoai" ng-show="tl.idTheLoai === n.idTheLoai"> 
-                                                {{tl.tenTheLoai}}                                                                                                                                                
-                                            </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -223,7 +217,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button ng-click="AddAlbum()" type="button">
+                            <button type="button" id="btnAdd">
                                 <i class="fa-solid fa-plus"></i>
                                 <span>Thêm</span>
                             </button>         
@@ -249,17 +243,17 @@
                     <tr>
                         <th style="width: 250px;">Tên album</th>
                         <th>Nghệ sĩ</th>
-                        <th>Mô tả</th>
+                        <th>Ngày phát hành</th>
                     </tr>
                     <tr>
                         <td style="width: 150px;">
-                            <input type="text" id="tenAlbumUpdate" value="{{a.tenAlbum}}">
+                            <input type="text" id="tenAlbumUpdate">
                         </td>
-                        <td data-idNgheSi="{{a.idNgheSi}}" id="idNgheSi" ng-repeat="ns in listNgheSi" ng-show="ns.idNgheSi === a.idNgheSi">
-                            {{ns.tenNgheSi}}                                
+                        <td id="tenNgheSiUpdate">
+                                                           
                         </td>
                         <td>
-                            <input type="text" id="moTaUpdate" value="{{a.moTa}}" data-idAlbum="{{a.idAlbum}}">
+                            <input type="text" id="dayUpdate">
                         </td>
                     </tr>
                     <tr>
@@ -270,7 +264,7 @@
                         <td>
                             <label>
                                 <input class="file_img" type="file"/>
-                                <img accept="image/*" class="img" id="img" src="{{a.anhDaiDien}}" alt="">
+                                <img accept="image/*" class="img" id="img" src="" alt="">
                             </label>
                         </td>
                         <td colspan="2">
@@ -280,7 +274,6 @@
                                         <tr>
                                             <th>Tên bài nhạc</th>
                                             <th>Ảnh</th>
-                                            <th>Thể loại</th>
                                             <th>Chức năng</th>
                                         </tr>
                                     </thead>
@@ -288,21 +281,18 @@
                             </div>
                             <div class="table_content">
                                 <table id="table_create" cellspacing = 0; border="1">
-                                    <tbody>
-                                        <tr ng-repeat="n in listNhacTrongAlbum">
+                                    <tbody id="table_update_songadd">
+                                        <!-- <tr ng-repeat="n in listNhacTrongAlbum">
                                             <td>{{n.tenNhac}}</td>
                                             <td>
                                                 <label>
                                                     <img accept="image/*" class="img" src="{{n.img}}" alt="">
                                                 </label>
                                             </td>
-                                            <td style="width: 130px;" ng-repeat="tl in listTheLoai" ng-show="tl.idTheLoai === n.idTheLoai"> 
-                                                {{tl.tenTheLoai}}
-                                            </td>
                                             <td>
                                                 <i ng-click="DeleteNhacKhoiAlbum(n.idNhac,a.idAlbum,n.tenNhac,n.img,n.idTheLoai)" class="fa-solid fa-delete-left"></i>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -310,7 +300,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <button ng-click="UpdateAlbum()" type="button">
+                            <button type="button" id="btnupdate">
                                 <i class="fa-solid fa-plus"></i>
                                 <span>Cập nhật</span>
                             </button>         
@@ -390,11 +380,11 @@
                         <th style="text-align: center;">Bạn có chắc muốn xóa album?</th>
                     </tr>
                     <tr>
-                        <th style="text-align: center;">{{a.tenAlbum}}</th>
+                        <th style="text-align: center;" id="tenAlbumDelete"></th>
                     </tr>
                     <tr>
                         <td style="display: flex; justify-content: center;">
-                            <button ng-click="DeleteAlbumByID(a.idAlbum)" type="button">
+                            <button type="button" id="btnDelete">
                                 <i class="fa-solid fa-trash-can"></i>
                                 <span>Xóa</span>
                             </button>                            
@@ -408,14 +398,14 @@
             </div>
         </div>
     </div>
-
-    <script src="access/js/admin.js"></script>
-    <script src="access/js/quanly.js"></script>
 </body>
-</html>
 <script>
     var user = JSON.parse(localStorage.getItem('Token'));
     if (!user) {
         window.location.href = "dangnhap.html";
     }
 </script>
+<script src="access/js/admin.js"></script>
+<script src="access/js/database.js"></script>
+<script src="access/js/album.js"></script>
+</html>

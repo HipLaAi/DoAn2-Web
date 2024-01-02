@@ -1,3 +1,151 @@
+@media screen and (max-width: 872px) {
+    /* silde */
+    .lobby_buttom-next,
+    .lobby_buttom-back{
+        display: none;
+    }
+    .lobby{
+        height: 340px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .lobby_listitemalbum{
+        padding-top:0;
+        margin-left: 0;
+    }
+    .album-item{
+        width: 100%;
+        height: 100%;
+    }
+    .album-item_img{ 
+        margin-left:0;
+        padding-bottom: 20px;
+        width: 100%;
+        height: 100%;
+        margin-right: 0;	
+        overflow: hidden;
+    }
+    .album-item_img img{
+        height: 100%;  
+        width: 100%;
+    }
+    .album-item:nth-child(2) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(5) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(3) .album-item_img{	
+        display: none;
+    }
+    .album-item:nth-child(4) .album-item_img{
+        display: none;
+    }
+    .album-item:nth-child(n+6) .album-item_img{
+        display: none;
+    }
+
+    /* rank */
+    .rank-active{
+        display: none;
+    }
+
+    .rank-weekly{
+        width: 100%;
+        gap: 15px;
+        display: grid;
+    }
+    .rank-weekly_vn, .rank-weekly_usuk, .rank-weekly_kpop{
+        padding: 5px;
+    }
+    .item_img img{
+        width: auto;
+    }
+    .item_profile {
+        width: 100px;
+    }
+    .item_profile h4{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 500px;
+    }
+    .item_profile a{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width:500px
+    }
+
+    /* discovery */
+    .discovery-listitem_center{
+        display: none;
+    }
+
+    /* nowplaying */
+    .nowplaying__main--left--title{
+        display: none;
+    }
+
+    /* album-detail */
+    .song-profile_name{
+        display: none;
+    }
+    .media-content_right{
+        display: none;
+    }
+    .song-profile_singer{
+        display: none;
+    }
+    .profile-action button{
+        width: 200px;
+    }
+
+    /* music detail */
+    .music-detail_left{
+        position: relative;
+        width: 100%;
+        float: none;
+        height: 330px;
+        padding-top:300px ;
+    }
+    .music-detail_right{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin-left: 0;
+    }
+    .music-detail_right_top{
+        padding-top: 50%;
+        align-items: center;
+    }
+    .music-detail_right_top .music-name{
+        margin: 10px -10px 10px 10px;
+    }
+    .music-detail_right .music-artists{
+        margin: 0;
+    }
+    .music-detail_right .music-artists span:nth-child(1){
+        display: none;
+    }
+    .music-detail_right .music-artists span{
+        margin: 10px -10px 10px 10px;
+    }
+    .music-detail_right_visualazer{
+        display: none;
+    }
+    .artist-list{
+        grid-template-columns:none
+    }
+    .artist-list-item{
+        display: flex;
+    }
+    .artist-item_left{
+        width: auto;
+        margin-right: 20px;
+    }
+}
+
 /* for mobile */
 @media screen and (max-width: 450px) {
      /* sidebar */
@@ -35,8 +183,6 @@
     }
     .lobby{
         height: 160px;
-        width: 100%;
-        margin-left: 0;
     }
     .lobby_listitemalbum{
         padding-top:0;
@@ -125,6 +271,9 @@
     .discovery-listitem_center, .discovery-listitem_left{
         display: none;
     }
+    .discovery-listitem_left{
+        display: none;
+    }
     .discovery-select{
         margin-top: 20px;
         gap:10px
@@ -175,7 +324,93 @@
         display: block;
     }
 
+
+    /* album-detail */
+    .album-left{
+        width: 100%;
+        position: relative;
+        float: none;
+    }
+    .album-content{
+        margin-left: 0;
+    }
+    .media-playlist_checkbox{
+        display: none;
+    }
+    .song-icon{
+        display: none;
+    }
+    .song-profile_name{
+        display: none;
+    }
+    .media-content_right{
+        display: none;
+    }
+    .song-profile_singer{
+        display: none;
+    }
+
+    /* music detail */
+    .music-detail_left{
+        position: relative;
+        width: 100%;
+        float: none;
+        height: 330px;
+        padding-top: 0;
+    }
+    .music-detail_right{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin-left: 0;
+    }
+    .music-detail_right_top{
+        padding: 0;
+        /* padding-top: 0; */
+        align-items: center;
+    }
+    .music-detail_right_top .music-name{
+        margin: 10px -10px 10px 10px;
+    }
+    .music-detail_right .music-artists{
+        margin: 0;
+    }
+    .music-detail_right .music-artists span:nth-child(1){
+        display: none;
+    }
+    .music-detail_right .music-artists span{
+        margin: 10px -10px 10px 10px;
+    }
+    .music-detail_right_visualazer{
+        display: none;
+    }
+    .artist-list{
+        grid-template-columns:none
+    }
+    .artist-list-item{
+        display: flex;
+    }
+    .artist-item_left{
+        width: auto;
+        margin-right: 20px;
+    }
+
+    /* broadcast */
+    .broadcast-listitem{
+        display: none;
+    }
+
 }
-@media screen and (max-width: 430px) {
-    
+
+@media screen and (max-width: 1024px) {
+    /* sidebar */
+    .sidebar{
+        width: 50px;
+    }
+    .main_listitem li{
+        padding: 10px 10px;  
+    }
+    .main_listitem li span{
+        display: none;     
+    }
 }

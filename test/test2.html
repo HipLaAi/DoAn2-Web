@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
 <body>
 
-    <canvas id="myCanvas" width="300px" height="500px" ></canvas>
+  <canvas id="myCanvas" width="300" height="500"></canvas>
 
-    <script>
-        const canvas = document.getElementById("myCanvas");
-        const ctx = canvas.getContext("2d");
-        const data = [100, 100, 50, 70, 150];
-        const start_point = 0;
-        const distance = canvas.width / data.length;
-        const barWidth = 50;
-        const scaleFactor = canvas.height / Math.max(...data);
-    
-        data.forEach((element, index) => {
-            const barHeight = element * scaleFactor;
-            const x = start_point + distance * index;
-            const y = canvas.height - barHeight;
-    
-            // Vẽ cột
-            ctx.fillStyle = 'blue';
-            ctx.fillRect(x, y, barWidth, barHeight);
-    
-            // Hiển thị số liệu trên mỗi cột
-            ctx.fillStyle = 'black';
-            ctx.font = '12px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillText(element, x + barWidth / 2, y - 5);
-    
-        });
-    </script>
-    
-    
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    const data = [100, 100, 50, 70, 150];
+    const start_point = 10;
+    const distance = (canvas.width - start_point) / data.length;
+    const barWidth = 40;
+    const scaleFactor = (canvas.height - 100) / Math.max(...data);
+
+    // Mảng chứa các màu mong muốn
+    const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6'];
+
+    data.forEach((element, index) => {
+      const barHeight = element * scaleFactor;
+      const x = start_point + distance * index;
+      const y = canvas.height - barHeight - 10;
+
+      const barColor = colors[index % colors.length];
+
+      ctx.fillStyle = barColor;
+      ctx.fillRect(x, y, barWidth, barHeight);
+
+      ctx.fillStyle = 'black';
+      ctx.font = '12px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(element, x + barWidth / 2, y - 5);
+      
+      ctx.fillStyle = 'black';
+      ctx.font = '10px Arial';
+      ctx.textAlign = 'center';
+    });
+  </script>
+
+</body>
 </html>

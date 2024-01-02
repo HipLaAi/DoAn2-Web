@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="access/css/admin.css">
+    <link rel="stylesheet" href="access/css/quanlynghesi.css">
+    <link rel="stylesheet" href="access/css/modal.css">
+    <link rel="stylesheet" href="access/css/chart.css">
+</head>
+<body>
+    <div id="header">
+        <li onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </li>
+    </div>
+    <nav id="sidebar" class="scroll">
+        <div class="logo">
+            <img src="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" alt="">
+            <h3>ADMIN</h3>
+            <span>Chào mừng bạn trở lại</span>
+        </div>
+        <hr>
+        <ul class="menu">
+            <li style="background-color: #8a4de6; color: #111d3d;" onclick="window.location.href='./chart.html'">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Tổng quan</span>
+            </li>
+            <li onclick="window.location.href='./quanlynhac.html'">
+                <i class="fa-solid fa-music"></i>
+                <span>Quản lý nhạc</span>
+            </li>
+            <li onclick="window.location.href='./quanlyalbum.html'">
+                <i class="fa-solid fa-record-vinyl"></i>
+                <span>Quản lý album</span>
+            </li>
+            <li onclick="window.location.href='./quanlynghesi.html'">
+                <i class="fa-solid fa-address-card"></i>
+                <span>Quản lý nghệ sĩ</span>
+            </li>
+            <li>
+                <i class="fa-brands fa-playstation"></i>
+                <span>Quản lý danh sách phát</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                <span>Quản lý người dùng</span>
+            </li>
+        </ul>
+    </nav>
+    <div id="main">
+        <div class="top">
+            <h3>Tổng quan</h3>
+            <h3 id="h3"></h3>
+        </div>
+        <div class="container">
+            <div class="main_content">
+                <div class="chart">
+                    <canvas id="myCanvas" width="450" height="500"></canvas>
+                    <h4>Biểu đồ thống kế các bài nhạc có view cao nhất</h4>
+                </div>
+                <div class="detail_chart">
+                    <h4>Chú thích</h4>
+                    <table id="chuthich">
+                        <!-- <tr>
+                            <td>
+                                <div class="color one"></div>
+                            </td>
+                            <td>
+                                <h4></h4>
+                                <h5></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color two"></div>
+                            </td>
+                            <td>
+                                <h4></h4>
+                                <h5></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color three"></div>
+                            </td>
+                            <td>
+                                <h4></h4>
+                                <h5></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color four"></div>
+                            </td>
+                            <td>
+                                <h4></h4>
+                                <h5></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="color five"></div>
+                            </td>
+                            <td>
+                                <h4></h4>
+                                <h5></h5>
+                            </td>
+                        </tr> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    
+</body>
+<script>
+    var user = JSON.parse(localStorage.getItem('Token'));
+    if (!user) {
+        window.location.href = "dangnhap.html";
+    }
+</script>
+<script src="access/js/admin.js"></script>
+<script src="access/js/database.js"></script>
+<script src="access/js/chart.js"></script>
+</html>

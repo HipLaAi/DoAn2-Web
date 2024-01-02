@@ -35,45 +35,30 @@ function openFormDeleteDataMusic(){
   $('#modal_deletedata').style.opacity = 1;
   $('#modal_deletedata').style.pointerEvents  = 'auto';
   $('#modal_deletedata .container').style.transform  = 'translateY(0)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function closeFormDeleteDataMusic(){
   $('#modal_deletedata').style.opacity = 0;
   $('#modal_deletedata').style.pointerEvents  = 'none';
   $('#modal_deletedata .container').style.transform  = 'translateY(-100%)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function openFormAddMusic(){
   $('#modal_create').style.opacity = 1;
   $('#modal_create').style.pointerEvents  = 'auto';
   $('#modal_create .container').style.transform  = 'translateY(0)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function closeFormAddMusic(){
   $('#modal_create').style.opacity = 0;
   $('#modal_create').style.pointerEvents  = 'none';
   $('#modal_create .container').style.transform  = 'translateY(-100%)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function openFormUpdateMusic(){
   $('#modal_update').style.opacity = 1;
   $('#modal_update').style.pointerEvents  = 'auto';
   $('#modal_update .container').style.transform  = 'translateY(0)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function closeFormUpdateMusic(){
@@ -86,18 +71,12 @@ function openFormDeleteMusic(){
   $('#modal_delete').style.opacity = 1;
   $('#modal_delete').style.pointerEvents  = 'auto';
   $('#modal_delete .container').style.transform  = 'translateY(0)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function closeForDeleteMusic(){
   $('#modal_delete').style.opacity = 0;
   $('#modal_delete').style.pointerEvents  = 'none';
   $('#modal_delete .container').style.transform  = 'translateY(-100%)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 
@@ -105,9 +84,6 @@ function openFormModalAddMusic(){
   $('#modal_addmussic').style.opacity = 1;
   $('#modal_addmussic').style.pointerEvents  = 'auto';
   $('#modal_addmussic .container').style.transform  = 'translateY(0)';
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-    $scope.ResetData();
-  });
 }
 
 function closeFormModalAddMusic(){
@@ -241,11 +217,6 @@ function sortTable(columnIndex) {
 
 function handleSelectChangeTenNgheSi(){
   var idNgheSi = $('#ngheSi').value;
-  angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-      $scope.LoadNhacByIDNgheSi(idNgheSi).then(function(){
-        checkboxmodal();
-      })
-  })
 }
 
 function checkboxmodal(){
@@ -257,75 +228,6 @@ function checkboxmodal(){
 }
 
 //---------------------------------------
-function changeimg($scope){
-  $$('td .file_img').forEach(function(input, index){
-    input.addEventListener('change', function(event){
-      const imgElement = $$('td .img')[index];
-      const fileInput = event.target;
-
-      if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          imgElement.src = e.target.result;  
-        };
-        reader.readAsDataURL(fileInput.files[0]);
-
-        // angular.element(document.querySelector('[ng-app]')).scope().$apply(function($scope) {
-        //   $scope.UploadFileIMG(input.files[0]);
-        // });
-
-      } 
-      else {
-        imgElement.src = '';
-      }
-      $scope.UploadFileIMG(fileInput.files[0]);
-    })
-  })
-}
-
-function changeaudio($scope){
-  $$('td .file_audio').forEach(function(input, index){
-    input.addEventListener('change', function(event){
-      const audioElement = $$('td .audio')[index];
-      const fileInput = event.target;
-
-      if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          audioElement.src = e.target.result;
-        };
-        reader.readAsDataURL(fileInput.files[0]);
-      } 
-      else {
-        audioElement.src = '';
-      }
-      $scope.UploadFileAUDIO(fileInput.files[0]);
-    })
-  })
-}
-
-function changetxt($scope) {
-  $$('td .file_txt').forEach(function(input) {
-    input.addEventListener('change', function(event) {
-      const txtElement = input.closest('td').querySelector('span');
-      const fileInput = event.target;
-      
-      if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const content = e.target.result;
-          txtElement.innerHTML = `${fileInput.files[0].name}`;
-          // $('#span').innerHTML = `${content}`;
-        };
-        reader.readAsText(fileInput.files[0]);
-      } else {
-        txtElement.innerHTML = ``;
-        // $('#span').innerHTML = ``;
-      }
-      $scope.UploadFileTEXT(fileInput.files[0]);
-    })
-  })
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     setInterval(showtime, 1000);

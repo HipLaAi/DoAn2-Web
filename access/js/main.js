@@ -43,6 +43,9 @@ const Nowplayingsong_iconHeart = $('.nowplaying__main--left--icon i')
 
 const listLoveSong = $(".bottom-section-song_library .media-playlist")
 
+const btnBack = $(".control-btn .back")
+const btnNext = $(".fonward")
+
 const app = {
     currentIndex: 0,
     isPlaying: false,
@@ -130,7 +133,7 @@ const app = {
         const loveSong = songs.filter(song => song.love === true);
         const htmlLoveSong = loveSong.map(song => {
             return `
-            <div class="media-playlist_item">
+            <div class="media-playlist_item" data-index=${song.id}>
                 <div class="media-content_left">
                     <div class="media-playlist_checkbox">
                         <label class="checkbox">
@@ -268,7 +271,7 @@ const app = {
         const htmlRankItemNew = topSongs.map(song => {
             startRankNew++;
             return `       
-            <div class="item rank-item">
+            <div class="item rank-item" data-index=${song.id}>
                 <span class="rank-item_rating">${startRankNew}</span>
                 <div class="item_img rank-item_img">
                     <img src="${song.image}" alt="">
@@ -332,7 +335,7 @@ const app = {
 
                 const AlbumPlayList = _this.getSong(_this.songs,_this.albums, albumId)
                 const htmlAlbumPlayList = AlbumPlayList.map(song =>
-                    `<div class="media-playlist_item">
+                    `<div class="media-playlist_item" data-index=${song.id}>
                         <div class="media-content_left">
                             <div class="media-playlist_checkbox">
                                 <label class="checkbox">
@@ -412,6 +415,70 @@ const app = {
             }                     
         }
 
+        listItemRank.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.discovery-item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        listDiscoveryCenter.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.discovery-item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        listDiscoveryLeft.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.discovery-item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        listItemRank.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.rank-item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        listLoveSong.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.media-playlist_item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        AlbumDetial_playList.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.media-playlist_item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+        PlaylistItem.onclick = function (e) {
+            let RankItem_Node = e.target.closest('.media-playlist_item')
+            if (RankItem_Node) {
+                app.currentIndex = RankItem_Node.dataset.index                   
+                _this.loadCurrentSong()
+                audio.play()       
+            }                     
+        }
+
+
         // xử lý CD quay
         const cdThumbRankAnimate = CD_thumb.animate([
             { transform: 'rotate(360deg)' }
@@ -429,7 +496,17 @@ const app = {
         });
         cdThumbMusicAnimate.pause();
 
-        
+        //xử lí next
+        btnNext.onclick = function(){
+            _this.nextSong();
+            audio.play()       
+        }
+
+        //xử lí back
+        btnBack.onclick = function(){
+            _this.backSong();
+            audio.play()       
+        }
         
         //xử lí play/pause
         btnPlay.onclick = function () {      
@@ -455,10 +532,37 @@ const app = {
             cdThumbRankAnimate.pause();  
             cdThumbMusicAnimate.pause();                                               
         }
+        //Xử lý khi hết nhạc
+        audio.onended = function(){
+            btnNext.onclick();
+        }
 
-        btnShowPlaylist.addEventListener("click",function(){
-            modelPlaylist.style.display="block";
-        })
+        // let show = false
+        // btnShowPlaylist.addEventListener("click",function(){
+        //     show = !show;
+        //     if(show){
+        //         modelPlaylist.style.display="block";
+        //     }
+        //     else{
+        //         modelPlaylist.style.display="none";
+        //     }
+        // })
+    },
+
+    nextSong:function(){
+        this.currentIndex++;
+        if(this.currentIndex >= this.songs.length){
+            this.currentIndex = 0;
+        }
+        this.loadCurrentSong();
+    },
+
+    backSong:function(){
+        this.currentIndex--;
+        if(this.currentIndex < 0){
+            this.currentIndex = this.songs.length-1;
+        }
+        this.loadCurrentSong();
     },
 
     defineProperties: function () {
@@ -474,6 +578,10 @@ const app = {
         Nowplayingsong_nameSong.textContent = this.currentSong.name
         Nowplayingsong_nameSinger.textContent = this.getArtistName(this.currentSong.idSinger,this.artists)
         audio.src = this.currentSong.path
+
+        MediaActive_thumb.src = this.currentSong.image
+        MediaActive_nameSong.textContent = this.currentSong.name
+        MediaActive_nameSinger.textContent = this.getArtistName(this.currentSong.idSinger,this.artists)
 
         if (this.songs[this.currentSong.id].love) {
             Nowplayingsong_icon.innerHTML = `<i class="fa-solid fa-heart" style="color: rebeccapurple; cursor: pointer;" data-id=${this.currentSong.id}></i>`
@@ -515,7 +623,7 @@ const app = {
         const htmlPlaylistItem = this.songs
           .filter(song => song.idSinger.some(id => idSinger.includes(id)) && song.id !== id)
           .map(song =>
-                `<div class="media-playlist_item">
+                `<div class="media-playlist_item" data-index=${song.id}>
                 <div class="media-content_left">
                     <div class="media-playlist_checkbox">
                         <label class="checkbox">
@@ -557,6 +665,7 @@ const app = {
 
         PlaylistItem.innerHTML = htmlPlaylistItem.join('')
         listArtist.innerHTML = htmlArtist.join('')
+        
     },
   
     start: function () {
@@ -571,6 +680,7 @@ const app = {
         this.loadCurrentSong()
     }
 }
+
 app.start()
 // var main = document.querySelector("main");
 // function loadPage(pageName) {

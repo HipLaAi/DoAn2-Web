@@ -87,7 +87,7 @@ sign.onclick = function(){
         checkUsser();
     }
     else if(email.value == "admin" && password.value == "admin"){
-        window.location.href = "quanlynhac.html";
+        window.location.href = "chart.html";
         localStorage.setItem("Token", '*************************');
     }
     else if(email.value == "hiep" && password.value == "123"){

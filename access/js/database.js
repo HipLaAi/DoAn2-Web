@@ -5,7 +5,7 @@ const song = [
         idSinger: [0,2,11,12,13],
         path: 'access/audio/y2mate.com - BUỒN HAY VUI  VSOUL x MCK x Obito x Ronboogz x Boyzed  Official Audio .mp3',
         image: 'access/image/img square/buonhayvui.jpg',
-        view: 100000,
+        view: 218765,
         love: true
     },
     {
@@ -50,7 +50,7 @@ const song = [
         idSinger: [4,7,15],
         path: 'access/audio/y2mate.com _ Chịu Cách Mình Nói Thua.mp3',
         image: 'access/image/img square/chiucachminhnoithua.jpg',
-        view: 80,
+        view: 123456,
         love: false
     },
     {
@@ -59,7 +59,7 @@ const song = [
         idSinger: [5],
         path: 'access/audio/y2mate.com _ Chờ Em Đến Bao Giờ Lofi Ver  Phong Max x Freak D.mp3',
         image: 'access/image/img square/choemdenbaogio.jpg',
-        view: 100,
+        view: 98765,
         love: false
     },
     {
@@ -95,7 +95,7 @@ const song = [
         idSinger: [8],
         path: 'access/audio/y2mate.com _ GDUCKY  WISH OFFICIAL MUSIC VIDEO.mp3',
         image: 'access/image/img square/wish.jpg',
-        view: 100,
+        view: 10023,
         love: false
     },
     {

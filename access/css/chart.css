@@ -1,0 +1,46 @@
+.main_content{
+    width: 100%;
+    display: flex;
+    padding-left: 50px;
+}
+.chart{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.chart h4{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.detail_chart{
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.detail_chart table{
+    width: 100%;
+}
+.detail_chart table td:nth-child(1){
+    width: 15%;
+    padding: 20px;
+    height: 80px;
+}
+.detail_chart table .color{
+    width: 100%;
+    height: 100%;
+}
+.detail_chart table .color.one{
+    background-color:#9b59b6;
+}
+.detail_chart table .color.two{
+    background-color:#f39c12;
+}
+.detail_chart table .color.three{
+    background-color:#e74c3c;
+}
+.detail_chart table .color.four{
+    background-color:#2ecc71;
+}
+.detail_chart table .color.five{
+    background-color:#3498db;
+}
