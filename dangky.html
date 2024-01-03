@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="access/css/dangky.css">
+    <link rel="shortcut icon" href="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <img id="logo" title="Music" src="access/image/img square/—Pngtree—music logo_8736577 - Copy.png" alt="">
+        <p id="title">Đăng ký miễn phí để bắt đầu nghe.</p>
+        <table border="0px" cellpasing = 0>
+            <tr>
+                <td colspan="3">
+                    <button id="btnFacebook">
+                        <img id="picFacebook" src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png" alt="">
+                        <span>Đăng ký bằng Facebook</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button id="btnGoogle">
+                        <img src="https://cdn4.iconfinder.com/data/icons/socialcones/508/Google-256.png" alt="">
+                        <span>Đăng ký bằng Google</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="hr"><hr></td>
+                <td id="or">hoặc</td>
+                <td class="hr"><hr></td>
+            </tr>
+        </table>
+        <table border="0px" cellpasing = 0>
+            <tr>
+                <td colspan="3" class="tittle">Email của bạn là gì?</td>
+            </tr>
+            <tr>
+                <td colspan="3" ><input type="email" name="" id="email" class="textbox" placeholder="Nhập email của bạn." required></td>
+            </tr>
+            <tr>
+                <td id="errorEmail_rong" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Bạn cần nhập email của bạn.
+                </td>
+            </tr>
+            <tr>
+                <td id="errorEmail" colspan="3" style="display: none;color: red;font-size: 14px;width: 450px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Email này không hợp lệ. Hãy đảm bảo rằng email được nhập dưới dạng example@email.com
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" ><a id="sdt" href="#">Dùng số điện thoại</a></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tittle">Xác nhận email của bạn</td>
+            </tr>
+            <tr>
+                <td colspan="3" ><input type="email" name="" id="xn_email" class="textbox" placeholder="Nhập lại email của bạn."></td>
+            </tr>
+            <tr>
+                <td id="error_XN_email_rong" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Bạn cần xác nhận email của bạn.
+                </td>
+            </tr>
+            <tr>
+                <td id="error_XN_email" colspan="3" style="display: none;color: red;font-size: 14px;width: 450px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Địa chỉ email không khớp.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tittle">Tạo mật khẩu</td>
+            </tr>
+            <tr>
+                <td colspan="3" ><input type="password" name="" id="password" class="textbox" placeholder="Tạo mật khẩu." required></td>
+            </tr>
+            <tr>
+                <td id="errorPassword_rong" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Bạn cần nhập mật khẩu.
+                </td>
+            </tr>
+            <tr>
+                <td id="errorPassword" colspan="3" style="display: none;color: red;font-size: 14px;width: 450px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Mật khẩu của bạn quá ngắn.
+                </td>
+            </tr>
+            <tr>
+                <td id="error_Password_Weak" colspan="3" style="display: none;color: red;font-size: 14px;width: 450px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Mật khẩu của bạn quá yếu. Đặt 1 mật khẩu mạnh hơn.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tittle">Bạn tên là gì?</td>
+            </tr>
+            <tr>
+                <td colspan="3" ><input type="text" name="" id="name" class="textbox" placeholder="Nhập tên hồ sơ."></td>
+            </tr>
+            <tr>
+                <td id="errorName" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Nhập tên cho hồ sơ của bạn.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="note">Tên này sẽ xuất hiện trên hồ sơ của bạn.</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tittle">Bạn sinh ngày nào?</td>
+            </tr>
+            <tr>
+                <td class="time">Ngày</td>
+                <td class="time">Tháng</td>
+                <td class="time">Năm</td>
+            </tr>
+            <tr>
+                <td><input class="textbox" maxlength="2" type="text" name="" id="day" placeholder="DD"></td>
+                <td>
+                    <div style="width: 200px;height: 45px;position: relative;margin-right: 20px;">
+                        <select name="" id="month" class="textbox">
+                            <option disabled selected>Tháng</option>
+                            <option value="">Tháng 1</option>
+                            <option value="">Tháng 2</option>
+                            <option value="">Tháng 3</option>
+                            <option value="">Tháng 4</option>
+                            <option value="">Tháng 5</option>
+                            <option value="">Tháng 6</option>
+                            <option value="">Tháng 7</option>
+                            <option value="">Tháng 8</option>
+                            <option value="">Tháng 9</option>
+                            <option value="">Tháng 10</option>
+                            <option value="">Tháng 11</option>
+                            <option value="">Tháng 12</option>
+                        </select>
+                        <i style="pointer-events:none;position: absolute;top: 15px;right: 15px;color: gray;" class="icon-menu fas fa-chevron-down"></i>
+                    </div>
+                </td>
+                <td><input class="textbox" maxlength="4" type="text" name="" id="year" placeholder="YYYY"></td>
+            </tr>
+            <tr>
+                <td id="errorDay" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Nhập một ngày hợp lệ trong tháng.
+                </td>
+            </tr>
+            <tr>
+                <td id="errorMonth" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Chọn tháng sinh của bạn.
+                </td>
+            </tr>
+            <tr>
+                <td id="errorYear" colspan="3" style="display: none;color: red;font-size: 14px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Nhập một năm hợp lệ.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="tittle">Giới tính của bạn là gì?</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div style="margin-top: 10px;cursor: default;">
+                        <label><input type="radio" name="gender" value="boy">Nam</label>
+                        <label><input type="radio" name="gender" value="girl">Nữ</label>
+                        <label><input type="radio" name="gender" value="no_distinction">Không phân biệt giới tính</label>
+                        <label><input type="radio" name="gender" value="other">Khác</label>
+                        <div style="margin-top: 10px;cursor: default;">
+                            <label><input type="radio" name="gender" value="other">Không muốn nêu cụ thể</label>
+                            <label id="errorGender" colspan="3" style="display: none;color: red;font-size: 14px;">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                Chọn giới tính của bạn.
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">
+                    <input type="button" value="Đăng ký" id="sign">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="login">Bạn có tài khoản?<a class="a" href="dangnhap.html" style="color: rgb(149, 92, 214);">Đăng nhập</a>.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+    <script src="access/js/dangky.js"></script>
+</html>

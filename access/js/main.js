@@ -395,7 +395,6 @@ const app = {
                 }
             }
         };
-        
 
         rankList.onclick = function (e) {
             let RankItem_Node = e.target.closest('.rank-item')
@@ -477,7 +476,6 @@ const app = {
                 audio.play()       
             }                     
         }
-
 
         // xử lý CD quay
         const cdThumbRankAnimate = CD_thumb.animate([
@@ -578,10 +576,6 @@ const app = {
         Nowplayingsong_nameSong.textContent = this.currentSong.name
         Nowplayingsong_nameSinger.textContent = this.getArtistName(this.currentSong.idSinger,this.artists)
         audio.src = this.currentSong.path
-
-        MediaActive_thumb.src = this.currentSong.image
-        MediaActive_nameSong.textContent = this.currentSong.name
-        MediaActive_nameSinger.textContent = this.getArtistName(this.currentSong.idSinger,this.artists)
 
         if (this.songs[this.currentSong.id].love) {
             Nowplayingsong_icon.innerHTML = `<i class="fa-solid fa-heart" style="color: rebeccapurple; cursor: pointer;" data-id=${this.currentSong.id}></i>`
